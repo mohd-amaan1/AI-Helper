@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# AI Helper
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+AI Helper is a Next.js web application built with TypeScript, Prisma, and TailwindCSS. It offers user authentication (signup and signin), integration with the Gemini API for AI chat functionality, and dynamic user data management.  
+
+## Features
+
+- **User Authentication**: Secure signup and signin functionality using Prisma and server actions.
+- **AI Chat**: Integrated with the Gemini API for an enhanced chat experience.
+- **Responsive Design**: Styled with TailwindCSS for a user-friendly and adaptive UI.
+- **Dynamic User Management**: Displays user data in real time using server-side actions.
+
+## Tech Stack
+
+- **Framework**: Next.js (TypeScript)
+- **Database**: PostgreSQL with Prisma ORM
+- **Styling**: TailwindCSS
+- **API**: Gemini API for AI functionality
+  
+## Project Structure
+
+```
+app/
+  ├── actions/          # Server actions (sho.ts, up.ts)
+  ├── signup/           # Signup page and components
+  ├── signin/           # Signin page
+  ├── about/            # About page
+  ├── globals.css       # Global styles
+  ├── page.tsx          # Main page
+components/
+  ├── AIChat.tsx        # AI chat component
+  ├── About.tsx         # About section component
+  ├── Navbar.tsx        # Navigation bar
+  ├── Signup.tsx        # Signup component
+prisma/
+  ├── schema.prisma     # Database schema
+public/                 # Static assets
+.env                    # Environment variables
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+Ensure the `.env` file is configured with the following:
+```env
+DATABASE_URL=your_database_url
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [MIT License](LICENSE).
