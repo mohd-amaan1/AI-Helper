@@ -1,5 +1,6 @@
-"use client"; 
+"use client";
 
+import { useSession } from "next-auth/react";
 import "../app/globals.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,12 +8,16 @@ import { FaRobot } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { status } = useSession();
 
   const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Sign out", href: "/signin" },
   ];
+
+  if (status === "authenticated") {
+    links.push({ name: "Log Out", href: "/api/auth/signout" });
+  }
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">

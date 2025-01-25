@@ -1,12 +1,11 @@
 import Navbar from "@/components/navbar";
 import AIChat from "@/components/AIChat";
 
-import { showUser } from "./actions/sho";
+import { getServerSession } from "next-auth";
 
-export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const userData = await showUser();
+  const session = await getServerSession();
   const envVar = process.env.REACT_APP_API_KEY || "";
 
   return (
@@ -22,7 +21,8 @@ export default async function Home() {
       >
         <div className="mt-10 bg-white shadow-md p-6 rounded-lg max-w-lg">
           <h1 className="text-xl font-semibold text-blue-700">
-            Welcome, {userData?.name}!
+            Welcome, {session && session.user!.name && <span> {session.user!.name} </span>}
+            {session && !(session.user!.name) && <span> {session.user!.email} </span>}
           </h1>
           <p className="text-gray-600 mt-2">
             Happy to have you here! Explore and enjoy your journey.
