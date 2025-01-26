@@ -2,14 +2,14 @@
 
 # AI Helper
 
-AI Helper is a Next.js web application built with TypeScript, Prisma, and TailwindCSS. It offers user authentication (signup and signin), integration with the Gemini API for AI chat functionality, and dynamic user data management.  
+AI Helper is a Next.js web application built with TypeScript, Prisma, and TailwindCSS. It offers user authentication (signup and signin) and Google OAuth, integration with the Gemini API for AI chat functionality, and dynamic user data management.  
 
 ## Features
 
-- **User Authentication**: Secure signup and signin functionality using Prisma and server actions.
-- **AI Chat**: Integrated with the Gemini API for an enhanced chat experience.
-- **Responsive Design**: Styled with TailwindCSS for a user-friendly and adaptive UI.
-- **Dynamic User Management**: Displays user data in real time using server-side actions.
+- **User Authentication**: Implemented secure sign-up and sign-in functionality using **NextAuth** with **Google OAuth** and credential-based authentication, managed with **Prisma ORM**.
+- **AI Chat**: Integrated with the **Gemini API** to provide an enhanced chatbot experience with real-time responses, handling **15 requests per minute (RPM)**.
+- **Responsive Design**: Styled the application with **TailwindCSS**, ensuring a user-friendly and adaptive interface across different devices and screen sizes.
+- **Dynamic User Management**: Displayed real-time user data and interactions using **Prisma ORM** and **PostgreSQL**, providing seamless user experience.
 
 ## Tech Stack
 
@@ -45,8 +45,12 @@ public/                 # Static assets
 
 Ensure the `.env` file is configured with the following:
 ```env
-DATABASE_URL=your_database_url
-GEMINI_API_KEY=your_gemini_api_key
+DATABASE_URL=
+REACT_APP_API_KEY=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXTAUTH_URL=
+NEXTAUTH_SECRET=
 ```
 
 ## License
