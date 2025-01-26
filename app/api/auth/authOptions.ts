@@ -14,7 +14,7 @@ export const authOptions: NextAuthOptions = {
                 name: { label: "Name", type: "name", placeholder: "optional" },
                 email: { label: "Email", type: "email", placeholder: "aka@example.com" },
                 password: { label: "Password", type: "password", placeholder: "password" },
-                isSignup: { label: "Signup", type: "checkbox" } // Optional: if you want to toggle between login and signup
+                isSignup: { label: "Signup?", type: "checkbox" } // Optional: if you want to toggle between login and signup
             },
             async authorize(credentials, req) {
                 const { name, email, password, isSignup } = credentials!;
