@@ -63,4 +63,5 @@ export const authOptions: NextAuthOptions = {
             return url.startsWith(baseUrl) ? url : baseUrl;
         },
     },
+    secret: process.env.NEXTAUTH_SECRET,
 };
